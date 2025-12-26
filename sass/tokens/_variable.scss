@@ -1,0 +1,46 @@
+// ---------- ---------- ---------- ---------- ----------
+// Variable
+// ---------- ---------- ---------- ---------- ----------
+
+
+// Breakpoints
+// ---------- ---------- ---------- ---------- ----------
+
+$breakpoint--4k: 2200px;
+$breakpoint--hd: 1620px;
+$breakpoint--lg: 1140px;
+$breakpoint--md: 760px;
+$breakpoint--sm: 640px;
+$breakpoint--xs: 420px;
+$breakpoint--xxs: 320px;
+
+
+// Gate
+// ---------- ---------- ---------- ---------- ----------
+
+$gate-slit-half-height: -28px;
+$gate-slit-half-offset: 8px;
+$gate-slit-half-negative-offset: -8px;
+
+$mask-gate-width: 9840px;
+$mask-gate-height: 4772px;
+
+
+// Navigation Top
+// ---------- ---------- ---------- ---------- ----------
+
+$mask-nav-width: $mask-gate-width*0.6;
+$mask-nav-height: $mask-gate-height*0.6;
+
+
+// Grid
+// ---------- ---------- ---------- ---------- ----------
+
+$column-gap: 40px;
+
+
+// Border radius
+// ---------- ---------- ---------- ---------- ----------
+
+$border-radius--outside: 24px;
+$border-radius--inside: 4px;

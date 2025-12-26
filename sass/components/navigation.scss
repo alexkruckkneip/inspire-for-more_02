@@ -1,0 +1,201 @@
+// ---------- ---------- ---------- ---------- ----------
+// Navigation
+// ---------- ---------- ---------- ---------- ----------
+
+
+
+// Navigation top
+// ---------- ---------- ---------- ---------- ----------
+
+.nav {
+  display: block;
+  height: 64px;
+
+  @media (max-width: $breakpoint--hd) {
+    height: 48px;
+  }
+
+  position: fixed;
+  top: -48px;
+  width: 100%;
+  z-index: 100;
+
+  transition: top 0.96s ease-in-out;
+  transition-delay: 1.92s;
+
+  svg {
+    bottom: 0;
+    display: block;
+    fill: $primary-bright-turquoise--900;
+    filter: drop-shadow(0px 0px 48px $primary-bright-turquoise--950);
+    position: absolute;
+    right: 0;
+    z-index: 200;
+  }
+
+  &-wrapper {
+    &-top {
+      align-items: center;
+      align-content: center;
+      display: flex;
+      flex-wrap: nowrap;
+      height: 64px;
+      justify-content: start;
+      padding: 0 12px;
+      position: absolute;
+      width: 100%;
+
+      @media (max-width: $breakpoint--hd) {
+        height: 48px;
+      }
+    }
+  }
+
+
+  // Nav item
+
+  .nav-item {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: $primary-bright-turquoise--200;
+    cursor: pointer;
+    display: inline-block;
+    height: 64px;
+    padding: 0 24px;
+    position: relative;
+    z-index: 211;
+
+    @media (max-width: $breakpoint--hd) {
+      font-size: 16px;
+      height: 48px;
+      padding: 0 12px;
+    }
+
+    &.inactive, &.inactive a {
+      animation: button-hover-revert 0.4s;
+      @include  button-hover-animation;
+
+      &:hover, &.nav-item-list--open, &:focus {
+        animation: button-hover 0.4s;
+        @include  button-hover-animation;
+      }
+    }
+    &.active {
+      color: $primary-bright-turquoise--200;
+    }
+    &.inactive {
+      color: $secondary-schooner--200;
+    }
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+
+
+  // Nav item list
+
+  .nav-item-list {
+    position: absolute;
+    padding: 0;
+    top: -720px;
+    width: 100%;
+    z-index: 200;
+
+    .scroll {
+      display: block;
+      position: relative;
+      margin-bottom: 64px;
+      max-height: calc(80vh - 64px);
+      max-height: calc(80dvh - 64px);
+      overflow-y: scroll;
+      padding: 40px 24px 0 120px;
+      width: 100%;
+      z-index: 200;
+
+      @media (max-width: $breakpoint--sm) {
+        width: auto;
+      }
+    }
+    li {
+      display: block;
+      margin: 16px 0;
+    }
+    a {
+      display: inline;
+      line-height: 32px;
+      padding: 2px 0;
+    }
+
+    &-02 {
+      top: -800px;
+      transition: top 0.96s ease-in-out;
+
+      .scroll {
+        @media (max-width: $breakpoint--hd) {
+          padding: 64px 24px 0 96px;
+        }
+        @media (max-width: $breakpoint--md) {
+          padding: 64px 56px 0 56px;
+        }
+        @media (max-width: $breakpoint--xs) {
+          padding: 64px 24px 0 24px;
+        }
+      }
+
+      @media (max-width: $breakpoint--md) {
+        top: -960px;
+      }
+    }
+    &-03 {
+      top: -320px;
+      transition: top 0.64s ease-in-out;
+
+      .scroll {
+
+        padding-left: 224px;
+        padding-top: 64px;
+
+        @media (max-width: $breakpoint--hd) {
+          margin-bottom: 48px;
+          padding: 64px 24px 0px 212px;
+        }
+      }
+    }
+
+    svg {
+      right: -104px;
+      z-index: 0;
+    }
+
+    &--open {
+      top: 0;
+    }
+
+    h3, h4 {
+      position: relative;
+      z-index: 210;
+    }
+    h4 {
+      line-height: 28px;
+    }
+    .nav-list-hide {
+      display: none;
+      height: 100vh;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+
+      &.nav-item-list--open {
+        display: block;
+      }
+    }
+  }
+}
+.loaded {
+  .nav {
+    top: 0;
+  }
+}
